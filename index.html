@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zay Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/png" href="./assets/img/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="font-sans">
+    <!-- NAVBAR -->
+    <nav
+  id="mainNav"
+  class="w-full bg-white text-black px-4 sm:px-6 md:px-10 py-4 flex justify-between items-center sticky top-0 left-0 z-50 shadow-sm"
+>
+  <h1 class="text-3xl font-bold text-green-600">
+    Zay
+  </h1>
+
+  <!-- Desktop Menu -->
+  <ul class="hidden md:flex gap-10 text-lg">
+    <li><a href="#Home" class="nav-link hover:text-green-600 transition">Home</a></li>
+    <li><a href="#about" class="nav-link hover:text-green-600 transition">About</a></li>
+    <li><a href="shop.html" class="nav-link hover:text-green-600 transition">Shop</a></li>
+    <li><a href="#contact" class="nav-link hover:text-green-600 transition">Contact</a></li>
+  </ul>
+
+  <!-- Icons + Menu Button -->
+  <div class="flex items-center gap-5 text-xl">
+    <button data-action="open-search" class="hidden sm:inline hover:text-green-600">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+    <!-- Cart -->
+    <div class="relative">
+      <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      <span id="cartCount"
+        class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex justify-center items-center">
+        0
+      </span>
+    </div>
+
+    <!-- User -->
+    <a href="user.html"><i class="fa-solid fa-user"></i></a>
+
+   
+  </div>
+</nav>
+<ul
+  id="mobileMenu"
+  class="hidden flex-col gap-4 p-6 bg-white shadow-lg absolute top-full left-0 w-full z-40 md:hidden"
+>
+  <li><a href="#Home" class="hover:text-green-600 text-lg">Home</a></li>
+  <li><a href="#about" class="hover:text-green-600 text-lg">About</a></li>
+  <li><a href="shop.html" class="hover:text-green-600 text-lg">Shop</a></li>
+  <li><a href="#contact" class="hover:text-green-600 text-lg">Contact</a></li>
+</ul>
+
+
+    <!-- HERO SECTION -->
+    <section
+      id="Home"
+      class="py-8 sm:py-12 md:py-16 min-h-[80vh] sm:min-h-[90vh] md:h-[100vh] bg-center flex items-center bg-gray-100"
+    >
+      <div
+        class="container max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-10 px-4"
+      >
+        <div
+          class="w-full md:ml-0 lg:ml-10 p-4 sm:p-6 md:p-8 rounded-xl max-w-lg text-center md:text-left"
+        >
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-5">
+            <span
+              class="font-bold text-green-600 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl block sm:inline"
+              >Zay</span
+            >
+            <span class="block sm:inline"> eCommerce</span>
+          </h1>
+          <p
+            class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 sm:mb-6 text-gray-700"
+          >
+            Discover curated apparel, footwear, and accessories crafted for
+            everyday confidence with delivery across Egypt.
+          </p>
+          <a
+            href="shop.html"
+            class="inline-block bg-green-600 text-white px-6 sm:px-8 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-green-700 transition"
+          >
+            Shop Now
+          </a>
+        </div>
+        <div class="flex-1 w-full">
+          <img
+            src="./assets/img/banner_img_03.jpg"
+            class="w-full rounded-lg"
+            alt="Hero Banner"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- CATEGORIES SECTION -->
+    <section class="py-10 sm:py-14 md:py-20 bg-gray-100">
+      <div class="container max-w-6xl mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 md:mb-14"
+        >
+          Categories
+        </h2>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
+        >
+          <!-- Category 1 -->
+          <div
+            class="bg-white rounded-xl shadow-md p-4 sm:p-6 flex flex-col items-center search-item"
+            data-name="Classic Watch Collection"
+            data-description="Luxury automatic and quartz watches curated from top designers."
+            data-link="shop.html"
+          >
+            <img
+              src="./assets/img/category_img_01.jpg"
+              class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-60 lg:h-60 object-cover rounded-full mb-4 sm:mb-6"
+              alt="Classic Watch Collection"
+            />
+            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+              Classic Watch Collection
+            </h3>
+            <a
+              href="shop.html"
+              class="bg-green-600 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-green-700 transition text-sm sm:text-base"
+            >
+              Go Shop
+            </a>
+          </div>
+
+          <!-- Category 2 -->
+          <div
+            class="bg-white rounded-xl shadow-md p-4 sm:p-6 flex flex-col items-center search-item"
+            data-name="Performance Sneakers"
+            data-description="Lightweight trainers engineered for movement and breathability."
+            data-link="shop.html"
+          >
+            <img
+              src="./assets/img/category_img_02.jpg"
+              class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-60 lg:h-60 object-cover rounded-full mb-4 sm:mb-6"
+              alt="Performance Sneakers"
+            />
+            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+              Performance Sneakers
+            </h3>
+            <a
+              href="shop.html"
+              class="bg-green-600 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-green-700 transition text-sm sm:text-base"
+            >
+              Go Shop
+            </a>
+          </div>
+
+          <!-- Category 3 -->
+          <div
+            class="bg-white rounded-xl shadow-md p-4 sm:p-6 flex flex-col items-center sm:col-span-2 md:col-span-1 search-item"
+            data-name="Artisan Accessories"
+            data-description="Handcrafted jewelry, belts, and small leather goods."
+            data-link="shop.html"
+          >
+            <img
+              src="./assets/img/category_img_03.jpg"
+              class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-60 lg:h-60 object-cover rounded-full mb-4 sm:mb-6"
+              alt="Artisan Accessories"
+            />
+            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+              Artisan Accessories
+            </h3>
+            <a
+              href="shop.html"
+              class="bg-green-600 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-green-700 transition text-sm sm:text-base"
+            >
+              Go Shop
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FEATURED PRODUCTS -->
+    <section class="py-10 sm:py-14 md:py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <!-- Title -->
+        <div class="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
+            Featured Product
+          </h2>
+          <p class="text-gray-600 text-base sm:text-lg md:text-xl px-4">
+            Handpicked best sellers from this week’s drop—designed for movement,
+            comfort, and minimal aesthetics.
+          </p>
+        </div>
+
+        <!-- Products Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
+        >
+          <!-- Product 1 -->
+          <div
+            class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 sm:p-6 search-item"
+            data-name="Leather Gym Duffel"
+            data-description="Full-grain leather gym bag with ventilated shoe pocket."
+            data-link="shop.html"
+          >
+            <img
+              src="./assets/img/gym-2.jpg"
+              class="rounded-xl mb-3 sm:mb-4 w-full"
+              alt="Leather Gym Duffel"
+            />
+            <div
+              class="flex items-center gap-1 text-yellow-400 text-base sm:text-lg md:text-xl mb-2 sm:mb-3"
+            >
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star text-gray-400"></i>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold mb-1">
+              Leather Gym Duffel
+            </h3>
+            <p
+              class="text-gray-500 text-sm sm:text-base md:text-lg mb-2 sm:mb-3"
+            >
+              Full-grain leather with a ventilated shoe pocket and padded
+              shoulder strap.
+            </p>
+            <p class="text-green-600 font-bold text-lg sm:text-xl mb-3">
+              $240.00
+            </p>
+            <button
+              onclick="addToCart('Leather Gym Duffel', 240.0, './assets/img/feature_prod_01.jpg', 'Full-grain leather with a ventilated shoe pocket and padded shoulder strap.')"
+              class="w-full bg-green-600 text-white font-semibold px-4 py-2 rounded hover:bg-green-700 transition cursor-pointer"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- Product 2 -->
+          <div
+            class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 sm:p-6 search-item"
+            data-name="City Runner Sneakers"
+            data-description="Featherweight knit sneakers for daily runs."
+            data-link="shop.html"
+          >
+            <img
+              src="./assets/img/Runner.jpg"
+              class="rounded-xl mb-3 sm:mb-4 w-full"
+              alt="City Runner Sneakers"
+            />
+            <div
+              class="flex items-center gap-1 text-yellow-400 text-base sm:text-lg md:text-xl mb-2 sm:mb-3"
+            >
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star text-gray-400"></i>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold mb-1">
+              City Runner Sneakers
+            </h3>
+            <p
+              class="text-gray-500 text-sm sm:text-base md:text-lg mb-2 sm:mb-3"
+            >
+              Featherweight knit upper with responsive cushioning for daily
+              miles.
+            </p>
+            <p class="text-green-600 font-bold text-lg sm:text-xl mb-3">
+              $480.00
+            </p>
+            <button
+              onclick="addToCart('City Runner Sneakers', 480.0, './assets/img/Summer Canvas Trainers.jpg', 'Featherweight knit upper with responsive cushioning for daily miles.')"
+              class="w-full bg-green-600 text-white font-semibold px-4 py-2 rounded hover:bg-green-700 transition cursor-pointer"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- Product 3 -->
+          <div
+            class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 sm:p-6 search-item"
+            data-name="Summer Canvas Trainers"
+            data-description="Breathable canvas trainers with contrast trims."
+            data-link="shop.html"
+          >
+            <img
+              src="./assets/img/Summer Canvas Trainers.jpg"
+              class="rounded-xl mb-3 sm:mb-4 w-full"
+              alt="Summer Canvas Trainers"
+            />
+            <div
+              class="flex items-center gap-1 text-yellow-400 text-base sm:text-lg md:text-xl mb-2 sm:mb-3"
+            >
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star text-gray-400"></i>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold mb-1">
+              Summer Canvas Trainers
+            </h3>
+            <p
+              class="text-gray-500 text-sm sm:text-base md:text-lg mb-2 sm:mb-3"
+            >
+              Breathable canvas with contrast trims built for long summer days.
+            </p>
+            <p class="text-green-600 font-bold text-lg sm:text-xl mb-3">
+              $360.00
+            </p>
+            <button
+              onclick="addToCart('Summer Canvas Trainers', 360.0, './assets/img/feature_prod_03.jpg', 'Breathable canvas with contrast trims built for long summer days.')"
+              class="w-full bg-green-600 text-white font-semibold px-4 py-2 rounded hover:bg-green-700 transition cursor-pointer"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BIG BANNER SECTION -->
+    <section class="py-10 sm:py-14 md:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-center"
+        >
+          <!-- Text -->
+          <div class="order-2 md:order-1 text-center md:text-left">
+            <h2
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
+            >
+              Repair Services
+            </h2>
+
+            <h3
+              class="text-xl sm:text-2xl md:text-3xl font-semibold text-green-600 mb-4 sm:mb-6"
+            >
+              Up to 70% Off - All T-Shirts & Accessories
+            </h3>
+
+            <p
+              class="text-gray-600 text-base sm:text-lg md:text-xl mb-6 sm:mb-8"
+            >
+              Our repair studio refreshes tees and accessories with eco-friendly
+              techniques so your favorites last season after season.
+            </p>
+
+            <a
+              href="shop.html"
+              class="inline-block bg-green-600 text-white px-6 sm:px-8 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-green-700 transition"
+            >
+              Shop Now
+            </a>
+          </div>
+
+          <!-- Image -->
+          <div class="order-1 md:order-2">
+            <img
+              src="./assets/img/banner_img_01.jpg"
+              class="rounded-xl shadow-lg w-full"
+              alt="Banner"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-10 sm:py-14 md:py-20 bg-gray-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center"
+      >
+        <!-- Image -->
+        <div class="order-2 md:order-1">
+          <img
+            src="./assets/img/zay_shop.png"
+            class="rounded-xl shadow-lg w-full"
+            alt="About Zay Shop"
+          />
+        </div>
+
+        <!-- Text -->
+        <div class="order-1 md:order-2 text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+            About Zay Shop
+          </h2>
+          <p class="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
+            Born in Cairo, Zay Shop curates independent labels and elevated
+            basics so you can mix premium quality with everyday ease.
+          </p>
+          <p class="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
+            We provide the best products with top quality, excellent service,
+            and fast delivery. Our goal is to make shopping enjoyable for
+            everyone.
+          </p>
+          <a
+            href="#"
+            class="inline-block bg-green-600 text-white px-6 sm:px-8 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-green-700 transition"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-10 sm:py-14 md:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <!-- Title -->
+        <div class="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
+            Testimonials
+          </h2>
+          <p class="text-gray-600 text-base sm:text-lg md:text-xl">
+            Our customers love our products
+          </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
+        >
+          <!-- Review 1 -->
+          <div
+            class="bg-gray-50 p-6 sm:p-8 rounded-xl shadow hover:shadow-lg transition"
+          >
+            <div class="flex justify-center mb-4 sm:mb-5">
+              <img
+                src="./assets/img/person_1.jpg"
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover shadow"
+                alt="John Doe"
+              />
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-center mb-2">
+              John Doe
+            </h3>
+            <p
+              class="text-gray-500 text-center mb-3 sm:mb-4 text-base sm:text-lg"
+            >
+              Product Designer
+            </p>
+
+            <div
+              class="flex justify-center text-yellow-400 mb-3 sm:mb-4 text-sm sm:text-base"
+            >
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star text-gray-400"></i>
+            </div>
+
+            <p
+              class="text-gray-600 text-sm sm:text-base md:text-lg text-center"
+            >
+              The leather goods feel premium and the support team helped me size
+              everything perfectly.
+            </p>
+          </div>
+
+          <!-- Review 2 -->
+          <div
+            class="bg-gray-50 p-6 sm:p-8 rounded-xl shadow hover:shadow-lg transition"
+          >
+            <div class="flex justify-center mb-4 sm:mb-5">
+              <img
+                src="./assets/img/person_2.jpg"
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover shadow"
+                alt="Jane Smith"
+              />
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-center mb-2">
+              Jane Smith
+            </h3>
+            <p
+              class="text-gray-500 text-center mb-3 sm:mb-4 text-base sm:text-lg"
+            >
+              Marketing Manager
+            </p>
+
+            <div
+              class="flex justify-center text-yellow-400 mb-3 sm:mb-4 text-sm sm:text-base"
+            >
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star text-gray-400"></i>
+              <i class="fa-regular fa-star text-gray-400"></i>
+            </div>
+
+            <p
+              class="text-gray-600 text-sm sm:text-base md:text-lg text-center"
+            >
+              Shipping was fast and the sneakers arrived exactly as described—my
+              go-to pair for client visits.
+            </p>
+          </div>
+
+          <!-- Review 3 -->
+          <div
+            class="bg-gray-50 p-6 sm:p-8 rounded-xl shadow hover:shadow-lg transition sm:col-span-2 lg:col-span-1"
+          >
+            <div class="flex justify-center mb-4 sm:mb-5">
+              <img
+                src="./assets/img/person_3_.jpeg"
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover shadow"
+                alt="Mohamoud ELshemy"
+              />
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-center mb-2">
+              Mohamoud ELshemy
+            </h3>
+            <p
+              class="text-gray-500 text-center mb-3 sm:mb-4 text-base sm:text-lg"
+            >
+              Store Owner
+            </p>
+
+            <div
+              class="flex justify-center text-yellow-400 mb-3 sm:mb-4 text-sm sm:text-base"
+            >
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+
+            <p
+              class="text-gray-600 text-sm sm:text-base md:text-lg text-center"
+            >
+              Zay Shop keeps my boutique stocked with pieces customers rave
+              about week after week.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-10 sm:py-14 md:py-20 bg-gray-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12"
+      >
+        <!-- Contact Info -->
+        <div class="flex flex-col justify-center text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+            Contact Us
+          </h2>
+          <p class="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
+            Have any questions? We'd love to hear from you. Fill out the form
+            and we'll get back to you as soon as possible.
+          </p>
+
+          <div
+            class="space-y-3 sm:space-y-4 text-gray-700 text-base sm:text-lg"
+          >
+            <p>
+              <i class="fa-solid fa-location-dot mr-2 text-green-600"></i>123
+              Main Street, Cairo, Egypt
+            </p>
+            <p>
+              <i class="fa-solid fa-phone mr-2 text-green-600"></i>+20 123 456
+              7890
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope mr-2 text-green-600"></i
+              >info@zayshop.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <form class="bg-white p-6 sm:p-8 rounded-xl shadow-md space-y-4">
+            <div>
+              <label
+                class="block mb-1 sm:mb-2 font-semibold text-sm sm:text-base"
+                >Name</label
+              >
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full border border-gray-300 rounded px-3 sm:px-4 py-2 focus:outline-none focus:border-green-600 text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label
+                class="block mb-1 sm:mb-2 font-semibold text-sm sm:text-base"
+                >Email</label
+              >
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full border border-gray-300 rounded px-3 sm:px-4 py-2 focus:outline-none focus:border-green-600 text-sm sm:text-base"
+              />
+            </div>
+            <div>
+              <label
+                class="block mb-1 sm:mb-2 font-semibold text-sm sm:text-base"
+                >Message</label
+              >
+              <textarea
+                placeholder="Your Message"
+                rows="5"
+                class="w-full border border-gray-300 rounded px-3 sm:px-4 py-2 focus:outline-none focus:border-green-600 text-sm sm:text-base"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full sm:w-auto bg-green-600 text-white px-6 py-2 sm:py-3 rounded font-semibold hover:bg-green-700 transition text-sm sm:text-base"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH OVERLAY -->
+    <div
+      id="searchOverlay"
+      class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-[60] px-4"
+      aria-hidden="true"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 sm:p-8 space-y-4"
+      >
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Search Catalog</h3>
+            <p class="text-gray-500 text-sm">
+              Type a keyword to quickly find products or categories.
+            </p>
+          </div>
+          <button
+            id="searchClose"
+            class="text-2xl text-gray-500 hover:text-gray-800 transition"
+            aria-label="Close search"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input
+            type="text"
+            id="searchInput"
+            class="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-600"
+            placeholder="Try “sneakers”, “watch”, “accessories”..."
+          />
+          <button
+            id="searchSubmit"
+            class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+          >
+            Search
+          </button>
+        </div>
+        <div
+          id="searchResults"
+          class="max-h-72 overflow-y-auto space-y-3 text-left"
+        >
+          <p class="text-gray-500 text-sm">
+            Start typing to see relevant results.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-10">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <!-- Logo + Description -->
+        <div>
+          <h2 class="text-4xl font-bold text-white mb-4">Zay Shop</h2>
+          <p class="text-gray-400 text-lg mb-6">
+            Independent Egyptian retailer delivering modern essentials, local
+            support, and fast nationwide shipping.
+          </p>
+
+          <div class="flex items-center gap-4 text-xl">
+            <a href="#" class="hover:text-white"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="hover:text-white"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="hover:text-white"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="hover:text-white"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Products -->
+        <div>
+          <h3 class="text-white text-2xl font-semibold mb-6">Products</h3>
+          <ul class="space-y-3 text-lg">
+            <li><a href="#" class="hover:text-white">Luxury</a></li>
+            <li><a href="#" class="hover:text-white">Sport Wear</a></li>
+            <li><a href="#" class="hover:text-white">Men</a></li>
+            <li><a href="#" class="hover:text-white">Women</a></li>
+            <li><a href="#" class="hover:text-white">Accessories</a></li>
+          </ul>
+        </div>
+
+        <!-- Further Info -->
+        <div>
+          <h3 class="text-white text-2xl font-semibold mb-6">Further Info</h3>
+          <ul class="space-y-3 text-lg">
+            <li><a href="#" class="hover:text-white">Home</a></li>
+            <li><a href="#" class="hover:text-white">About Us</a></li>
+            <li><a href="#" class="hover:text-white">Shop Locations</a></li>
+            <li><a href="#" class="hover:text-white">FAQs</a></li>
+            <li><a href="#" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div
+        class="border-t border-gray-700 mt-16 pt-6 text-center text-gray-400"
+      >
+        <p class="text-lg">© 2025 Zay Shop. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zay Shop - Shop Page</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="font-sans bg-gray-50">
+
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="w-full bg-white shadow px-4 sm:px-6 md:px-10 py-4 sm:py-6 md:py-10 flex justify-between items-center relative sticky top-0 z-50">
+    <h1 class="text-3xl font-bold text-green-600"><a href="index.html">Zay</a></h1>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex gap-10 text-lg">
+      <li><a href="index.html" class="nav-link hover:text-green-600 transition">Home</a></li>
+      <li><a href="index.html#about" class="nav-link hover:text-green-600 transition">About</a></li>
+      <li><a href="shop.html" class="nav-link active text-green-600 font-bold">Shop</a></li>
+      <li><a href="index.html#contact" class="nav-link hover:text-green-600 transition">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Menu -->
+    <ul id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg flex flex-col gap-4 p-6 z-50 md:hidden">
+      <li><a href="index.html" class="nav-link hover:text-green-600 transition">Home</a></li>
+      <li><a href="index.html#about" class="nav-link hover:text-green-600 transition">About</a></li>
+      <li><a href="shop.html" class="nav-link active text-green-600 font-bold">Shop</a></li>
+      <li><a href="index.html#contact" class="nav-link hover:text-green-600 transition">Contact</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="text-xl flex gap-5 items-center">
+      <button class="hidden sm:inline hover:text-green-600 transition" data-action="open-search" aria-label="Open search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <div class="relative">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <span id="cartCount" class="absolute -top-1 -right-1 bg-red-600 text-white w-5 h-5 text-xs rounded-full flex justify-center items-center">0</span>
+      </div>
+
+      <a href="user.html" aria-label="User profile"><i class="fa-solid fa-user"></i></a>
+
+      <button class="sm:hidden hover:text-green-600 transition" data-action="open-search" aria-label="Open search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      
+    </div>
+  </nav>
+
+  <!-- SHOP SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold">Shop All Products</h2>
+        <p class="text-gray-600 text-xl">Browse through our latest products</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+        <!-- Product 1 -->
+        <div class="bg-gray-50 rounded-xl shadow p-5 hover:shadow-lg transition search-item"
+             data-id="product1"
+             data-name="Gym Weight Set"
+             data-description="Adjustable dumbbells and weight plates."
+             data-price="240.00"
+             data-image="./assets/img/Gym Weight.jpg">
+          <img src="./assets/img/Gym Weight.jpg" class="rounded-xl mb-4 w-full h-48 object-cover" alt="Gym Weight Set">
+          <h3 class="text-2xl font-semibold mb-2">Gym Weight Set</h3>
+          <p class="text-gray-500 mb-3">Adjustable dumbbells and weight plates.</p>
+          <p class="text-green-600 font-bold text-xl mb-3">$240.00</p>
+          <button onclick="addToCart('Gym Weight Set',240.00,'./assets/img/Gym Weight.jpg','Adjustable dumbbells and weight plates.')"
+                  class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="bg-gray-50 rounded-xl shadow p-5 hover:shadow-lg transition search-item"
+             data-id="product2"
+             data-name="Streetwear Sneakers"
+             data-description="Chunky sole suede sneakers."
+             data-price="480.00"
+             data-image="./assets/img/shoes.jpg">
+          <img src="./assets/img/shoes.jpg" class="rounded-xl mb-4 w-full h-48 object-cover" alt="Streetwear Sneakers">
+          <h3 class="text-2xl font-semibold mb-2">Streetwear Sneakers</h3>
+          <p class="text-gray-500 mb-3">Chunky sole suede sneakers.</p>
+          <p class="text-green-600 font-bold text-xl mb-3">$480.00</p>
+          <button onclick="addToCart('Streetwear Sneakers',480.00,'./assets/img/shoes.jpg','Chunky sole suede sneakers.')"
+                  class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="bg-gray-50 rounded-xl shadow p-5 hover:shadow-lg transition search-item"
+             data-id="product3"
+             data-name="Summer Adidas Sneakers"
+             data-description="Retro mesh sneakers for warm days."
+             data-price="360.00"
+             data-image="./assets/img/Summer Addidas.jpg">
+          <img src="./assets/img/Summer Addidas.jpg" class="rounded-xl mb-4 w-full h-48 object-cover" alt="Summer Adidas Sneakers">
+          <h3 class="text-2xl font-semibold mb-2">Summer Adidas Sneakers</h3>
+          <p class="text-gray-500 mb-3">Retro mesh sneakers for warm days.</p>
+          <p class="text-green-600 font-bold text-xl mb-3">$360.00</p>
+          <button onclick="addToCart('Summer Adidas Sneakers',360.00,'./assets/img/Summer Addidas.jpg','Retro mesh sneakers for warm days.')"
+                  class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="bg-gray-50 rounded-xl shadow p-5 hover:shadow-lg transition search-item"
+             data-id="product4"
+             data-name="Smart Fitness Watch"
+             data-description="AMOLED smart fitness watch."
+             data-price="450.00"
+             data-image="./assets/img/Smart Watch.jpg">
+          <img src="./assets/img/Smart Watch.jpg" class="rounded-xl mb-4 w-full h-48 object-cover" alt="Smart Fitness Watch">
+          <h3 class="text-2xl font-semibold mb-2">Smart Fitness Watch</h3>
+          <p class="text-gray-500 mb-3">AMOLED smart fitness watch.</p>
+          <p class="text-green-600 font-bold text-xl mb-3">$450.00</p>
+          <button onclick="addToCart('Smart Fitness Watch',450.00,'./assets/img/Smart Watch.jpg','AMOLED smart fitness watch.')"
+                  class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Overlay -->
+  <div id="searchOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden justify-center items-center p-6 z-50">
+    <div class="bg-white p-6 rounded-xl shadow-xl w-full max-w-2xl">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-2xl font-bold">Search Catalog</h3>
+        <button id="searchClose" class="text-3xl hover:text-gray-600 transition">&times;</button>
+      </div>
+      <input id="searchInput" class="border w-full p-3 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Search products...">
+      <div id="searchResults" class="max-h-64 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <!-- JS Files -->
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/cart.js"></script>
+</body>
+</html>
